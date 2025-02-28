@@ -6,7 +6,7 @@
 /*   By: mokon <mokon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 21:33:47 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/28 13:39:03 by mokon            ###   ########.fr       */
+/*   Updated: 2025/02/28 13:50:55 by mokon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,31 @@ char	*ft_joinfree(char *buf, char *tmp)
 	tmp2 = NULL;
 	return (buf);
 }
-char *get_rest_of_file(char *result)
+char	*get_rest_of_file(char *result)
 {
-	
+	char	*rest_of_file;
+	int		i;
+	int		j;
 
+	i = 0;
+	j = 0;
+	while (result[i] && result[i] != '\n')
+		++i;
+	if (!result[i])
+	{
+		free(result);
+		return (NULL);
+	}
+	rest_of_file = ft_calloc(ft_strlen(result) - i + 1, sizeof(char));
+	while (result[i])
+	{
+		rest_of_file[j] = result[i + 1];
+		++i;
+		++j;
+	}
+	free(result);
+	result = NULL;
+	return (rest_of_file);
 }
 
 char	*get_one_line(char *result)
