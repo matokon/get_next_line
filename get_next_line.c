@@ -6,7 +6,7 @@
 /*   By: mokon <mokon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 21:33:47 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/28 13:50:55 by mokon            ###   ########.fr       */
+/*   Updated: 2025/02/28 14:37:45 by mokon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,7 @@ char	*read_line(int fd, char *result)
 		temp[bytes_read] = 0;
 		result = ft_joinfree(result, temp);
 		if (ft_strchr(result, '\n'))
-			;
-		break ;
+			break ;
 	}
 	free(temp);
 	return (result);

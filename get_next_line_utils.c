@@ -6,7 +6,7 @@
 /*   By: mokon <mokon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 17:05:09 by mokon             #+#    #+#             */
-/*   Updated: 2025/02/28 13:53:04 by mokon            ###   ########.fr       */
+/*   Updated: 2025/02/28 14:37:50 by mokon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ft_bzero(void *s, size_t n)
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*p;
+	void *p;
 
 	if (size != 0 && nmemb != 0)
 		if (SIZE_MAX / nmemb <= size)
