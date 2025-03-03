@@ -6,7 +6,7 @@
 /*   By: mokon <mokon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 21:33:47 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/28 14:37:45 by mokon            ###   ########.fr       */
+/*   Updated: 2025/03/03 15:20:04 by mokon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ char	*read_line(int fd, char *result)
 	int		bytes_read;
 
 	temp = malloc(BUFFER_SIZE + 1);
+	if (!temp)
+		return (NULL);
 	bytes_read = 1;
 	while (bytes_read > 0)
 	{
@@ -105,6 +107,8 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	if (!result)
+		result = ft_calloc(1, 1);
 	result = read_line(fd, result);
 	if (!result)
 		return (NULL);
